@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+
+                    <button type="button" id="b1">6 people per 1 sheep</button>
+                    <button type="button" id="b2">3 people per 1 sheep</button>
+                    <button type="button" id="b3">1 person per 1 sheep"</button>
+                    <button type="button" id="b4">1 person per 3 sheep</button>
+                    <button type="button" id="b5">1 person per 6 sheep</button>
+                    <button type="button" id="reload" onClick="window.location.reload()">Start Over</button>
+                <div id="multiple"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                    <form id="form2">
+                        <input type="text" id="response">
+                        <input type="submit" id="submit" value="Check Answer">
+                        <div id="multiple2"></div>
+                    </form>
+                  <div>
+                    <button type="button" id="reload" onClick="window.location.reload()">Start Over</button>
+                    <div id="multiple"></div>
+                  </div>
+            </div>
+        </div>
+
+        <script>
+            // TODO: Add code to check answers to questions
+
+            let body = document.querySelector('body');
+            document.querySelector('#b1').addEventListener('click', function(){
+                b1.style.backgroundColor = 'green'
+
+            const para = document.createElement("p");
+            para.innerText = "That is the correct answer!";
+            document.getElementById("multiple").appendChild(para);
+            })
+
+            document.querySelector('#b2').addEventListener('click', function(){
+                b2.style.backgroundColor = 'red'
+
+            const para = document.createElement("p");
+            para.innerText = "That is the wrong answer!";
+            document.getElementById("multiple").appendChild(para);
+            })
+
+            document.querySelector('#b3').addEventListener('click', function(){
+                b3.style.backgroundColor = 'red'
+
+            const para = document.createElement("p");
+            para.innerText = "That is the wrong answer!";
+            document.getElementById("multiple").appendChild(para);
+
+            })
+
+            document.querySelector('#b4').addEventListener('click', function(){
+                b4.style.backgroundColor = 'red'
+
+            const para = document.createElement("p");
+            para.innerText = "That is the wrong answer!";
+            document.getElementById("multiple").appendChild(para);
+            })
+
+            document.querySelector('#b5').addEventListener('click', function(){
+                b5.style.backgroundColor = 'red'
+
+            const para = document.createElement("p");
+            para.innerText = "That is the wrong answer!";
+            document.getElementById("multiple").appendChild(para);
+            })
+
+            document.querySelector('#form2').addEventListener('submit', function(e) {
+                let response = document.querySelector('#response')
+
+                if (response === "Switzerland" || "switzerland") {
+                    const para2 = document.createElement("p")
+                    para2.innerText = "That is the correct answer!";
+                    document.getElementById("multiple2").appendChild(para2)
+                    response.style.borderColor = 'green'
+                    response.style.borderWidth = "Thick"
+
+                }
+                else {
+                    const para2 = document.createElement("p")
+                    para2.innerText = "That is incorrect!"
+                    document.getElementById("multiple2").appendChild(para2)
+                    response.style.borderColor = 'red'
+                    response.style.borderWidth = "Thick"
+                }
+
+                e.preventDefault()
+            });
+
+        </script>
+    </body>
+</html>
